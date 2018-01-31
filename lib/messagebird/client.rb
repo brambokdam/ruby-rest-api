@@ -87,7 +87,7 @@ module MessageBird
     def otp_generate(recipient, params={})
         OTP.new(request(
             :post,
-            'otp/generate',
+            'verify',
             params.merge({
                 :recipient => recipient
             })
