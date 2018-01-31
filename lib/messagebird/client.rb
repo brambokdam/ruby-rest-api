@@ -95,10 +95,10 @@ module MessageBird
     end
 
     # Verify the One-Time-Password
-    def otp_verify(recipient, token, params={})
+    def otp_verify(id, token, params={})
         # Set the path to include all the parameters
         # Blame Sam Wierema for not adhering to REST principles...
-        path = 'otp/verify?' + URI.encode_www_form(params.merge({
+        path = "verify/#{id}?" + URI.encode_www_form(params.merge({
             :recipient => recipient,
             :token => token
         }))
