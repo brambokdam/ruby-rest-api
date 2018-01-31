@@ -99,7 +99,6 @@ module MessageBird
         # Set the path to include all the parameters
         # Blame Sam Wierema for not adhering to REST principles...
         path = "verify/#{id}?" + URI.encode_www_form(params.merge({
-            :recipient => recipient,
             :token => token
         }))
 
